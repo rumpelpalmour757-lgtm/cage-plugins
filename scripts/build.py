@@ -46,6 +46,11 @@ REQUIRED_LOCALES = (
     "zh-CN", "zh-TW", "ru", "ar", "fa", "ko", "es", "my",
     "be", "ps", "prs", "am", "so", "ti", "fr",
 )
+# Desktop applications: the vendor's own source, never a pinned version.
+DESKTOP_APPS_SINCE = (0, 3, 2)
+DEB_PACKAGE = re.compile(r"^[a-z0-9][a-z0-9+.-]{1,62}$")
+APT_WORD = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._/-]{0,62}$")
+FINGERPRINT = re.compile(r"^[0-9A-F]{40}$")
 LOCALE_TAG = re.compile(r"^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
 I18N_FIELDS = {"displayName", "description"}
 
@@ -329,7 +334,7 @@ def open_url_ok(pattern):
 def contributes(folder, data):
     """Check the second manifest format: what the plugin adds."""
     name, c = folder.name, data["contributes"]
-    only(f"{name}: contributes", c, {"mcpServers", "views", "uriHandlers"})
+    only(f"{name}: contributes", c, {"mcpServers", "views", "uriHandlers", "desktopApps"})
     if "command" in data:
         fail(f"{name}: command belongs in contributes.mcpServers")
     engines = data.get("engines")
@@ -388,10 +393,94 @@ def contributes(folder, data):
         if "reveal" in handler and handler["reveal"] not in views:
             fail(f"{name}: uriHandlers {scheme}: reveal is not one of views")
         schemes.append(scheme)
+    if c.get("desktopApps"):
+        desktop_apps(folder, data, schemes)
     for event in data.get("activationEvents", []):
         kind, _, target = str(event).partition(":")
         if not (event == "onStartupFinished" or kind == "onView" and target in views or kind == "onUri" and target in schemes):
             fail(f"{name}: unknown activation event {event!r}")
+
+
+def https_ok(address):
+    """Whether address is https to a named host on the default port."""
+    if not isinstance(address, str) or len(address) > 400 or not address.startswith("https://"):
+        return False
+    rest = address[len("https://"):]
+    host = rest.split("/", 1)[0]
+    return HOST.match(host) is not None and not re.search(r"[\s?#@\\]", rest)
+
+
+def plain(value):
+    return isinstance(value, str) and 0 < len(value) <= 200 and not re.search(r"[\x00\r\n]", value)
+
+
+def desktop_apps(folder, data, schemes):
+    """Check desktop applications, as the application does: a guest plugin
+    names the vendor's source and how to start the app, never a version."""
+    name, apps = folder.name, data["contributes"]["desktopApps"]
+    if data["kind"] != "guest":
+        fail(f"{name}: desktopApps are for guest plugins")
+    floor = tuple(int(part) for part in re.sub(r"^(>=|\^)", "", data["engines"]["cage"]).split("."))
+    if floor < DESKTOP_APPS_SINCE:
+        fail(f"{name}: desktopApps need engines.cage of at least {'.'.join(map(str, DESKTOP_APPS_SINCE))}")
+    if not isinstance(apps, list) or not 0 < len(apps) <= 4:
+        fail(f"{name}: desktopApps must list one to four applications")
+    ids, taken = [], list(schemes)
+    for app in apps:
+        only(f"{name}: desktopApps", app, {"id", "title", "icon", "source", "command", "schemes", "packages"})
+        app_id = str(app.get("id", ""))
+        where = f"{name}: desktopApps {app_id}"
+        if not NAME.match(app_id) or len(app_id) > 40 or app_id in ids:
+            fail(f"{name}: desktopApps needs a unique id")
+        if not isinstance(app.get("title"), str) or not 0 < len(app["title"].strip()) <= 80:
+            fail(f"{where}: needs a title")
+        if "icon" in app and not inside(folder, app["icon"], (".png", ".svg")):
+            fail(f"{where}: icon must be a PNG or SVG file inside the plugin")
+        source = app.get("source")
+        if not isinstance(source, dict):
+            fail(f"{where}: source is missing")
+        command = app.get("command")
+        if not isinstance(command, list) or not 0 < len(command) <= 16 or not all(plain(part) for part in command):
+            fail(f"{where}: command is missing or not valid")
+        if source.get("type") == "apt":
+            only(f"{where}: source", source, {"type", "repository", "suite", "components", "key", "fingerprint", "package"})
+            components = source.get("components")
+            if not (https_ok(source.get("repository")) and https_ok(source.get("key"))
+                    and APT_WORD.match(str(source.get("suite", ""))) and FINGERPRINT.match(str(source.get("fingerprint", "")))
+                    and DEB_PACKAGE.match(str(source.get("package", "")))
+                    and isinstance(components, list) and 0 < len(components) <= 4
+                    and all(APT_WORD.match(str(part)) and "/" not in str(part) for part in components)):
+                fail(f"{where}: an apt source needs an https repository and key, a suite, components, "
+                     "the key's full uppercase fingerprint and a package")
+        elif source.get("type") in ("deb", "archive"):
+            only(f"{where}: source", source, {"type", "resolve", "hosts"})
+            resolve, hosts = source.get("resolve"), source.get("hosts")
+            if (not isinstance(resolve, list) or not 0 < len(resolve) <= 8 or not inside(folder, resolve[0], (".py", ".sh"))
+                    or not all(plain(part) for part in resolve[1:])):
+                fail(f"{where}: source.resolve must start with a self-contained .py or .sh file inside the plugin")
+            if not isinstance(hosts, list) or not 0 < len(hosts) <= 8 or not all(HOST.match(str(host)) for host in hosts):
+                fail(f"{where}: source.hosts must list one to eight download hosts")
+        else:
+            fail(f"{where}: source.type must be apt, deb or archive")
+        program = command[0]
+        path = pathlib.PurePosixPath(program)
+        if source["type"] == "archive":
+            if path.is_absolute() or ".." in path.parts or "\\" in program or path.as_posix() != program:
+                fail(f"{where}: command must start with a program inside the release")
+        elif not (program.startswith("/usr/") or program.startswith("/opt/")) or "/../" in program or program.endswith("/"):
+            fail(f"{where}: command must start with an absolute path under /usr or /opt")
+        app_schemes = app.get("schemes", [])
+        if not isinstance(app_schemes, list) or len(app_schemes) > 4:
+            fail(f"{where}: at most four schemes")
+        for scheme in app_schemes:
+            scheme = str(scheme)
+            if not SCHEME.match(scheme) or len(scheme) > 40 or scheme in COMMON_SCHEMES or scheme == "x-scheme-handler" or scheme in taken:
+                fail(f"{where}: scheme {scheme!r} is not valid, reserved or repeated")
+            taken.append(scheme)
+        packages = app.get("packages", [])
+        if not isinstance(packages, list) or len(packages) > 40 or not all(DEB_PACKAGE.match(str(p)) for p in packages):
+            fail(f"{where}: packages must be Debian package names")
+        ids.append(app_id)
 
 
 def manifest(folder):
@@ -435,6 +524,7 @@ def manifest(folder):
     # Only what is shown to people and models; kind and engines are structure.
     shown = [data["name"], data.get("displayName", ""), data["description"]]
     shown += [view["title"] for view in data.get("contributes", {}).get("views", [])]
+    shown += [app["title"] for app in data.get("contributes", {}).get("desktopApps", [])]
     check_wording(f"{folder.name}: the manifest", json.dumps(shown, ensure_ascii=False))
     check_tools_file(folder)
     return data

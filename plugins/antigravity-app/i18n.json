@@ -1,0 +1,62 @@
+{
+  "zh-CN": {
+    "displayName": "Antigravity",
+    "description": "在环境中运行 Google 官方的 Antigravity 桌面应用。它在 Linux 上无法自行更新，每次更新都会获取 Google 发布的最新版本。"
+  },
+  "zh-TW": {
+    "displayName": "Antigravity",
+    "description": "在環境中執行 Google 官方的 Antigravity 桌面應用程式。它在 Linux 上無法自行更新，每次更新都會取得 Google 發布的最新版本。"
+  },
+  "ru": {
+    "displayName": "Antigravity",
+    "description": "Запускает в среде официальное настольное приложение Antigravity от Google. В Linux оно не обновляется само, поэтому каждое обновление загружает последнюю версию, выпущенную Google."
+  },
+  "ar": {
+    "displayName": "Antigravity",
+    "description": "يشغّل تطبيق Antigravity الرسمي لسطح المكتب من Google داخل البيئة. لا يستطيع التحديث بنفسه على Linux، لذا يجلب كل تحديث أحدث إصدار تنشره Google."
+  },
+  "fa": {
+    "displayName": "Antigravity",
+    "description": "برنامهٔ رسمی دسکتاپ Antigravity از Google را در محیط اجرا می‌کند. این برنامه در Linux خودش به‌روز نمی‌شود، پس هر به‌روزرسانی آخرین نسخهٔ منتشرشدهٔ Google را دریافت می‌کند."
+  },
+  "ko": {
+    "displayName": "Antigravity",
+    "description": "Google의 공식 Antigravity 데스크톱 앱을 환경에서 실행합니다. Linux에서는 스스로 업데이트하지 못하므로 업데이트할 때마다 Google이 배포한 최신 버전을 받아옵니다."
+  },
+  "es": {
+    "displayName": "Antigravity",
+    "description": "Ejecuta en el entorno la aplicación de escritorio oficial Antigravity de Google. En Linux no puede actualizarse sola, así que cada actualización descarga la última versión publicada por Google."
+  },
+  "my": {
+    "displayName": "Antigravity",
+    "description": "Google ၏ တရားဝင် Antigravity desktop အက်ပ်ကို ပတ်ဝန်းကျင်ထဲတွင် ဖွင့်ပေးပါသည်။ Linux တွင် ကိုယ်တိုင် အပ်ဒိတ်မလုပ်နိုင်သဖြင့် အပ်ဒိတ်တိုင်း Google ထုတ်ပြန်သော နောက်ဆုံးဗားရှင်းကို ရယူပါသည်။"
+  },
+  "be": {
+    "displayName": "Antigravity",
+    "description": "Запускае ў асяроддзі афіцыйную настольную праграму Antigravity ад Google. У Linux яна не абнаўляецца сама, таму кожнае абнаўленне спампоўвае апошнюю версію, выпушчаную Google."
+  },
+  "ps": {
+    "displayName": "Antigravity",
+    "description": "د Google رسمي Antigravity ډیسکټاپ اپلیکیشن په چاپېریال کې چلوي. په Linux کې پخپله نه تازه کېږي، نو هر تازه کول د Google وروستۍ خپره شوې نسخه راوړي."
+  },
+  "prs": {
+    "displayName": "Antigravity",
+    "description": "اپلیکیشن رسمی دسکتاپ Antigravity از Google را در محیط اجرا می‌کند. این اپلیکیشن در Linux خودش به‌روز نمی‌شود، پس هر به‌روزرسانی آخرین نسخهٔ نشرشدهٔ Google را دریافت می‌کند."
+  },
+  "am": {
+    "displayName": "Antigravity",
+    "description": "የGoogle ይፋዊ የAntigravity ዴስክቶፕ መተግበሪያን በአካባቢው ያስኬዳል። በLinux ላይ ራሱን ማዘመን ስለማይችል እያንዳንዱ ማዘመኛ Google ያወጣውን የቅርብ ጊዜ ስሪት ያመጣል።"
+  },
+  "so": {
+    "displayName": "Antigravity",
+    "description": "Waxay deegaanka ku socodsiisaa abka desktop-ka rasmiga ah ee Antigravity ee Google. Linux kuma cusbooneysiin karo naftiisa, sidaas darteed cusbooneysiin kastaa waxay soo dejisaa noocii ugu dambeeyay ee Google sii daayay."
+  },
+  "ti": {
+    "displayName": "Antigravity",
+    "description": "ወግዓዊ ናይ Google Antigravity ዴስክቶፕ ኣፕ ኣብቲ ከባቢ የንቀሳቕስ። ኣብ Linux ባዕሉ ክሕደስ ስለ ዘይክእል፣ ነፍሲ ወከፍ ምሕዳስ ናይ መወዳእታ ስሪት ካብ Google የምጽእ።"
+  },
+  "fr": {
+    "displayName": "Antigravity",
+    "description": "Exécute dans l'environnement l'application de bureau officielle Antigravity de Google. Sous Linux, elle ne peut pas se mettre à jour seule : chaque mise à jour récupère la dernière version publiée par Google."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "codex-app",
+  "displayName": "Codex",
+  "version": "0.1.0",
+  "description": "Runs OpenAI's official Codex desktop app (the ChatGPT app for Linux) in the environment, installed from OpenAI's signed repository at its latest release.",
+  "icon": "icon.svg",
+  "engines": { "cage": ">=0.3.2" },
+  "kind": "guest",
+  "permissions": [],
+  "categories": ["developer"],
+  "contributes": {
+    "desktopApps": [
+      {
+        "id": "codex",
+        "title": "Codex",
+        "icon": "icon.svg",
+        "source": {
+          "type": "apt",
+          "repository": "https://persistent.oaistatic.com/codex-app-prod/linux/deb",
+          "suite": "stable",
+          "components": ["main"],
+          "key": "https://persistent.oaistatic.com/codex-app-prod/linux/repository-signing-key.gpg",
+          "fingerprint": "3BFA0E4AE8B8CC16A2D9BA684A3B4A566C4660E4",
+          "package": "chatgpt"
+        },
+        "command": ["/usr/bin/chatgpt"],
+        "schemes": ["codex"],
+        "packages": ["git"]
+      }
+    ]
+  }
+}

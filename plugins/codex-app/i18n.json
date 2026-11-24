@@ -1,0 +1,62 @@
+{
+  "zh-CN": {
+    "displayName": "Codex",
+    "description": "在环境中运行 OpenAI 官方的 Codex 桌面应用（Linux 版 ChatGPT 应用），从 OpenAI 签名软件源安装，默认使用最新版本。"
+  },
+  "zh-TW": {
+    "displayName": "Codex",
+    "description": "在環境中執行 OpenAI 官方的 Codex 桌面應用程式（Linux 版 ChatGPT 應用程式），從 OpenAI 簽署的軟體源安裝，預設使用最新版本。"
+  },
+  "ru": {
+    "displayName": "Codex",
+    "description": "Запускает в среде официальное настольное приложение Codex от OpenAI (приложение ChatGPT для Linux), устанавливая последнюю версию из подписанного репозитория OpenAI."
+  },
+  "ar": {
+    "displayName": "Codex",
+    "description": "يشغّل تطبيق Codex الرسمي لسطح المكتب من OpenAI (تطبيق ChatGPT لنظام Linux) داخل البيئة، ويثبّت أحدث إصدار من مستودع OpenAI الموقّع."
+  },
+  "fa": {
+    "displayName": "Codex",
+    "description": "برنامهٔ رسمی دسکتاپ Codex از OpenAI (برنامهٔ ChatGPT برای Linux) را در محیط اجرا می‌کند و آخرین نسخه را از مخزن امضاشدهٔ OpenAI نصب می‌کند."
+  },
+  "ko": {
+    "displayName": "Codex",
+    "description": "OpenAI의 공식 Codex 데스크톱 앱(Linux용 ChatGPT 앱)을 환경에서 실행하며, OpenAI의 서명된 저장소에서 최신 버전을 설치합니다."
+  },
+  "es": {
+    "displayName": "Codex",
+    "description": "Ejecuta en el entorno la aplicación de escritorio oficial de Codex de OpenAI (la aplicación ChatGPT para Linux), instalando la última versión desde el repositorio firmado de OpenAI."
+  },
+  "my": {
+    "displayName": "Codex",
+    "description": "OpenAI ၏ တရားဝင် Codex desktop အက်ပ် (Linux အတွက် ChatGPT အက်ပ်) ကို ပတ်ဝန်းကျင်ထဲတွင် ဖွင့်ပေးပြီး OpenAI ၏ လက်မှတ်ထိုးထားသော repository မှ နောက်ဆုံးဗားရှင်းကို ထည့်သွင်းပါသည်။"
+  },
+  "be": {
+    "displayName": "Codex",
+    "description": "Запускае ў асяроддзі афіцыйную настольную праграму Codex ад OpenAI (праграму ChatGPT для Linux), усталёўваючы апошнюю версію з падпісанага рэпазіторыя OpenAI."
+  },
+  "ps": {
+    "displayName": "Codex",
+    "description": "د OpenAI رسمي Codex ډیسکټاپ اپلیکیشن (د Linux لپاره ChatGPT اپلیکیشن) په چاپېریال کې چلوي، او وروستۍ نسخه د OpenAI له لاسلیک شوي ذخیرې نصبوي."
+  },
+  "prs": {
+    "displayName": "Codex",
+    "description": "اپلیکیشن رسمی دسکتاپ Codex از OpenAI (اپلیکیشن ChatGPT برای Linux) را در محیط اجرا می‌کند و آخرین نسخه را از مخزن امضاشدهٔ OpenAI نصب می‌کند."
+  },
+  "am": {
+    "displayName": "Codex",
+    "description": "የOpenAI ይፋዊ የCodex ዴስክቶፕ መተግበሪያን (ለLinux የChatGPT መተግበሪያ) በአካባቢው ያስኬዳል፤ የቅርብ ጊዜውን ስሪት ከOpenAI የተፈረመ ማከማቻ ይጭናል።"
+  },
+  "so": {
+    "displayName": "Codex",
+    "description": "Waxay deegaanka ku socodsiisaa abka desktop-ka rasmiga ah ee Codex ee OpenAI (abka ChatGPT ee Linux), iyadoo ka rakibaysa noocii ugu dambeeyay kaydka la saxeexay ee OpenAI."
+  },
+  "ti": {
+    "displayName": "Codex",
+    "description": "ወግዓዊ ናይ OpenAI Codex ዴስክቶፕ ኣፕ (ናይ Linux ChatGPT ኣፕ) ኣብቲ ከባቢ የንቀሳቕስ፤ ናይ መወዳእታ ስሪት ካብ ዝተፈረመ መዝገብ OpenAI ይተክል።"
+  },
+  "fr": {
+    "displayName": "Codex",
+    "description": "Exécute dans l'environnement l'application de bureau officielle Codex d'OpenAI (l'application ChatGPT pour Linux), installée en dernière version depuis le dépôt signé d'OpenAI."
+  }
+}

@@ -2,6 +2,130 @@
   "version": 1,
   "plugins": [
     {
+      "name": "antigravity-app",
+      "version": "0.1.0",
+      "description": "Runs Google's official Antigravity desktop app in the environment. Each update fetches Google's latest Linux release, because the app cannot update itself there.",
+      "permissions": [],
+      "author": {
+        "name": "Lee-xeo",
+        "official": true
+      },
+      "i18n": {
+        "zh-CN": {
+          "displayName": "Antigravity",
+          "description": "在环境中运行 Google 官方的 Antigravity 桌面应用。它在 Linux 上无法自行更新，每次更新都会获取 Google 发布的最新版本。"
+        },
+        "zh-TW": {
+          "displayName": "Antigravity",
+          "description": "在環境中執行 Google 官方的 Antigravity 桌面應用程式。它在 Linux 上無法自行更新，每次更新都會取得 Google 發布的最新版本。"
+        },
+        "ru": {
+          "displayName": "Antigravity",
+          "description": "Запускает в среде официальное настольное приложение Antigravity от Google. В Linux оно не обновляется само, поэтому каждое обновление загружает последнюю версию, выпущенную Google."
+        },
+        "ar": {
+          "displayName": "Antigravity",
+          "description": "يشغّل تطبيق Antigravity الرسمي لسطح المكتب من Google داخل البيئة. لا يستطيع التحديث بنفسه على Linux، لذا يجلب كل تحديث أحدث إصدار تنشره Google."
+        },
+        "fa": {
+          "displayName": "Antigravity",
+          "description": "برنامهٔ رسمی دسکتاپ Antigravity از Google را در محیط اجرا می‌کند. این برنامه در Linux خودش به‌روز نمی‌شود، پس هر به‌روزرسانی آخرین نسخهٔ منتشرشدهٔ Google را دریافت می‌کند."
+        },
+        "ko": {
+          "displayName": "Antigravity",
+          "description": "Google의 공식 Antigravity 데스크톱 앱을 환경에서 실행합니다. Linux에서는 스스로 업데이트하지 못하므로 업데이트할 때마다 Google이 배포한 최신 버전을 받아옵니다."
+        },
+        "es": {
+          "displayName": "Antigravity",
+          "description": "Ejecuta en el entorno la aplicación de escritorio oficial Antigravity de Google. En Linux no puede actualizarse sola, así que cada actualización descarga la última versión publicada por Google."
+        },
+        "my": {
+          "displayName": "Antigravity",
+          "description": "Google ၏ တရားဝင် Antigravity desktop အက်ပ်ကို ပတ်ဝန်းကျင်ထဲတွင် ဖွင့်ပေးပါသည်။ Linux တွင် ကိုယ်တိုင် အပ်ဒိတ်မလုပ်နိုင်သဖြင့် အပ်ဒိတ်တိုင်း Google ထုတ်ပြန်သော နောက်ဆုံးဗားရှင်းကို ရယူပါသည်။"
+        },
+        "be": {
+          "displayName": "Antigravity",
+          "description": "Запускае ў асяроддзі афіцыйную настольную праграму Antigravity ад Google. У Linux яна не абнаўляецца сама, таму кожнае абнаўленне спампоўвае апошнюю версію, выпушчаную Google."
+        },
+        "ps": {
+          "displayName": "Antigravity",
+          "description": "د Google رسمي Antigravity ډیسکټاپ اپلیکیشن په چاپېریال کې چلوي. په Linux کې پخپله نه تازه کېږي، نو هر تازه کول د Google وروستۍ خپره شوې نسخه راوړي."
+        },
+        "prs": {
+          "displayName": "Antigravity",
+          "description": "اپلیکیشن رسمی دسکتاپ Antigravity از Google را در محیط اجرا می‌کند. این اپلیکیشن در Linux خودش به‌روز نمی‌شود، پس هر به‌روزرسانی آخرین نسخهٔ نشرشدهٔ Google را دریافت می‌کند."
+        },
+        "am": {
+          "displayName": "Antigravity",
+          "description": "የGoogle ይፋዊ የAntigravity ዴስክቶፕ መተግበሪያን በአካባቢው ያስኬዳል። በLinux ላይ ራሱን ማዘመን ስለማይችል እያንዳንዱ ማዘመኛ Google ያወጣውን የቅርብ ጊዜ ስሪት ያመጣል።"
+        },
+        "so": {
+          "displayName": "Antigravity",
+          "description": "Waxay deegaanka ku socodsiisaa abka desktop-ka rasmiga ah ee Antigravity ee Google. Linux kuma cusbooneysiin karo naftiisa, sidaas darteed cusbooneysiin kastaa waxay soo dejisaa noocii ugu dambeeyay ee Google sii daayay."
+        },
+        "ti": {
+          "displayName": "Antigravity",
+          "description": "ወግዓዊ ናይ Google Antigravity ዴስክቶፕ ኣፕ ኣብቲ ከባቢ የንቀሳቕስ። ኣብ Linux ባዕሉ ክሕደስ ስለ ዘይክእል፣ ነፍሲ ወከፍ ምሕዳስ ናይ መወዳእታ ስሪት ካብ Google የምጽእ።"
+        },
+        "fr": {
+          "displayName": "Antigravity",
+          "description": "Exécute dans l'environnement l'application de bureau officielle Antigravity de Google. Sous Linux, elle ne peut pas se mettre à jour seule : chaque mise à jour récupère la dernière version publiée par Google."
+        }
+      },
+      "displayName": "Antigravity",
+      "categories": [
+        "developer"
+      ],
+      "kind": "guest",
+      "engines": {
+        "cage": ">=0.3.2"
+      },
+      "contributes": {
+        "desktopApps": [
+          {
+            "id": "antigravity",
+            "title": "Antigravity",
+            "icon": "icon.svg",
+            "source": {
+              "type": "archive",
+              "resolve": [
+                "resolve.py"
+              ],
+              "hosts": [
+                "storage.googleapis.com"
+              ]
+            },
+            "command": [
+              "antigravity"
+            ],
+            "schemes": [
+              "antigravity"
+            ],
+            "packages": [
+              "libnss3",
+              "libgtk-3-0t64",
+              "libgbm1",
+              "libasound2t64",
+              "libatk-bridge2.0-0t64",
+              "libcups2t64",
+              "libxss1",
+              "libxtst6",
+              "libsecret-1-0",
+              "libnotify4",
+              "libxshmfence1",
+              "libdrm2",
+              "libxkbfile1",
+              "git"
+            ]
+          }
+        ]
+      },
+      "icon": "https://raw.githubusercontent.com/Lee-xeo/cage-plugins/main/plugins/antigravity-app/icon.svg",
+      "archive": "https://raw.githubusercontent.com/Lee-xeo/cage-plugins/main/dist/antigravity-app-0.1.0.tar.gz",
+      "sha256": "3b722df959dac401ba09bdd571cd4b003f4341f7f95978aa344101592244bdff",
+      "bytes": 3524
+    },
+    {
       "name": "blender",
       "version": "0.1.1",
       "description": "Works with an open Blender: reads the scene, creates and changes objects and materials, runs Python in Blender and captures the viewport. Needs Blender with the included add-on.",
@@ -416,6 +540,119 @@
       "archive": "https://raw.githubusercontent.com/Lee-xeo/cage-plugins/main/dist/clock-0.1.4.tar.gz",
       "sha256": "263f9ff344ace131a3bcaec45f968e09a7db2bf62562a57f6c4ab4dc3b716ff2",
       "bytes": 2081
+    },
+    {
+      "name": "codex-app",
+      "version": "0.1.0",
+      "description": "Runs OpenAI's official Codex desktop app (the ChatGPT app for Linux) in the environment, installed from OpenAI's signed repository at its latest release.",
+      "permissions": [],
+      "author": {
+        "name": "Lee-xeo",
+        "official": true
+      },
+      "i18n": {
+        "zh-CN": {
+          "displayName": "Codex",
+          "description": "在环境中运行 OpenAI 官方的 Codex 桌面应用（Linux 版 ChatGPT 应用），从 OpenAI 签名软件源安装，默认使用最新版本。"
+        },
+        "zh-TW": {
+          "displayName": "Codex",
+          "description": "在環境中執行 OpenAI 官方的 Codex 桌面應用程式（Linux 版 ChatGPT 應用程式），從 OpenAI 簽署的軟體源安裝，預設使用最新版本。"
+        },
+        "ru": {
+          "displayName": "Codex",
+          "description": "Запускает в среде официальное настольное приложение Codex от OpenAI (приложение ChatGPT для Linux), устанавливая последнюю версию из подписанного репозитория OpenAI."
+        },
+        "ar": {
+          "displayName": "Codex",
+          "description": "يشغّل تطبيق Codex الرسمي لسطح المكتب من OpenAI (تطبيق ChatGPT لنظام Linux) داخل البيئة، ويثبّت أحدث إصدار من مستودع OpenAI الموقّع."
+        },
+        "fa": {
+          "displayName": "Codex",
+          "description": "برنامهٔ رسمی دسکتاپ Codex از OpenAI (برنامهٔ ChatGPT برای Linux) را در محیط اجرا می‌کند و آخرین نسخه را از مخزن امضاشدهٔ OpenAI نصب می‌کند."
+        },
+        "ko": {
+          "displayName": "Codex",
+          "description": "OpenAI의 공식 Codex 데스크톱 앱(Linux용 ChatGPT 앱)을 환경에서 실행하며, OpenAI의 서명된 저장소에서 최신 버전을 설치합니다."
+        },
+        "es": {
+          "displayName": "Codex",
+          "description": "Ejecuta en el entorno la aplicación de escritorio oficial de Codex de OpenAI (la aplicación ChatGPT para Linux), instalando la última versión desde el repositorio firmado de OpenAI."
+        },
+        "my": {
+          "displayName": "Codex",
+          "description": "OpenAI ၏ တရားဝင် Codex desktop အက်ပ် (Linux အတွက် ChatGPT အက်ပ်) ကို ပတ်ဝန်းကျင်ထဲတွင် ဖွင့်ပေးပြီး OpenAI ၏ လက်မှတ်ထိုးထားသော repository မှ နောက်ဆုံးဗားရှင်းကို ထည့်သွင်းပါသည်။"
+        },
+        "be": {
+          "displayName": "Codex",
+          "description": "Запускае ў асяроддзі афіцыйную настольную праграму Codex ад OpenAI (праграму ChatGPT для Linux), усталёўваючы апошнюю версію з падпісанага рэпазіторыя OpenAI."
+        },
+        "ps": {
+          "displayName": "Codex",
+          "description": "د OpenAI رسمي Codex ډیسکټاپ اپلیکیشن (د Linux لپاره ChatGPT اپلیکیشن) په چاپېریال کې چلوي، او وروستۍ نسخه د OpenAI له لاسلیک شوي ذخیرې نصبوي."
+        },
+        "prs": {
+          "displayName": "Codex",
+          "description": "اپلیکیشن رسمی دسکتاپ Codex از OpenAI (اپلیکیشن ChatGPT برای Linux) را در محیط اجرا می‌کند و آخرین نسخه را از مخزن امضاشدهٔ OpenAI نصب می‌کند."
+        },
+        "am": {
+          "displayName": "Codex",
+          "description": "የOpenAI ይፋዊ የCodex ዴስክቶፕ መተግበሪያን (ለLinux የChatGPT መተግበሪያ) በአካባቢው ያስኬዳል፤ የቅርብ ጊዜውን ስሪት ከOpenAI የተፈረመ ማከማቻ ይጭናል።"
+        },
+        "so": {
+          "displayName": "Codex",
+          "description": "Waxay deegaanka ku socodsiisaa abka desktop-ka rasmiga ah ee Codex ee OpenAI (abka ChatGPT ee Linux), iyadoo ka rakibaysa noocii ugu dambeeyay kaydka la saxeexay ee OpenAI."
+        },
+        "ti": {
+          "displayName": "Codex",
+          "description": "ወግዓዊ ናይ OpenAI Codex ዴስክቶፕ ኣፕ (ናይ Linux ChatGPT ኣፕ) ኣብቲ ከባቢ የንቀሳቕስ፤ ናይ መወዳእታ ስሪት ካብ ዝተፈረመ መዝገብ OpenAI ይተክል።"
+        },
+        "fr": {
+          "displayName": "Codex",
+          "description": "Exécute dans l'environnement l'application de bureau officielle Codex d'OpenAI (l'application ChatGPT pour Linux), installée en dernière version depuis le dépôt signé d'OpenAI."
+        }
+      },
+      "displayName": "Codex",
+      "categories": [
+        "developer"
+      ],
+      "kind": "guest",
+      "engines": {
+        "cage": ">=0.3.2"
+      },
+      "contributes": {
+        "desktopApps": [
+          {
+            "id": "codex",
+            "title": "Codex",
+            "icon": "icon.svg",
+            "source": {
+              "type": "apt",
+              "repository": "https://persistent.oaistatic.com/codex-app-prod/linux/deb",
+              "suite": "stable",
+              "components": [
+                "main"
+              ],
+              "key": "https://persistent.oaistatic.com/codex-app-prod/linux/repository-signing-key.gpg",
+              "fingerprint": "3BFA0E4AE8B8CC16A2D9BA684A3B4A566C4660E4",
+              "package": "chatgpt"
+            },
+            "command": [
+              "/usr/bin/chatgpt"
+            ],
+            "schemes": [
+              "codex"
+            ],
+            "packages": [
+              "git"
+            ]
+          }
+        ]
+      },
+      "icon": "https://raw.githubusercontent.com/Lee-xeo/cage-plugins/main/plugins/codex-app/icon.svg",
+      "archive": "https://raw.githubusercontent.com/Lee-xeo/cage-plugins/main/dist/codex-app-0.1.0.tar.gz",
+      "sha256": "88bc66c37bd9e36ed9aa6e0d53980503f204955c2b9602d9e953c17d9af27970",
+      "bytes": 2602
     },
     {
       "name": "codex-dispatch",

@@ -1,0 +1,28 @@
+{
+  "name": "antigravity-app",
+  "displayName": "Antigravity",
+  "version": "0.1.0",
+  "description": "Runs Google's official Antigravity desktop app in the environment. Each update fetches Google's latest Linux release, because the app cannot update itself there.",
+  "icon": "icon.svg",
+  "engines": { "cage": ">=0.3.2" },
+  "kind": "guest",
+  "permissions": [],
+  "categories": ["developer"],
+  "contributes": {
+    "desktopApps": [
+      {
+        "id": "antigravity",
+        "title": "Antigravity",
+        "icon": "icon.svg",
+        "source": {
+          "type": "archive",
+          "resolve": ["resolve.py"],
+          "hosts": ["storage.googleapis.com"]
+        },
+        "command": ["antigravity"],
+        "schemes": ["antigravity"],
+        "packages": ["libnss3", "libgtk-3-0t64", "libgbm1", "libasound2t64", "libatk-bridge2.0-0t64", "libcups2t64", "libxss1", "libxtst6", "libsecret-1-0", "libnotify4", "libxshmfence1", "libdrm2", "libxkbfile1", "git"]
+      }
+    ]
+  }
+}
