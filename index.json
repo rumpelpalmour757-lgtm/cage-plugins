@@ -78,7 +78,7 @@
       ],
       "kind": "guest",
       "engines": {
-        "cage": ">=0.3.2"
+        "cage": ">=0.2.1"
       },
       "contributes": {
         "desktopApps": [
@@ -122,7 +122,7 @@
       },
       "icon": "https://raw.githubusercontent.com/Lee-xeo/cage-plugins/main/plugins/antigravity-app/icon.svg",
       "archive": "https://raw.githubusercontent.com/Lee-xeo/cage-plugins/main/dist/antigravity-app-0.1.0.tar.gz",
-      "sha256": "3b722df959dac401ba09bdd571cd4b003f4341f7f95978aa344101592244bdff",
+      "sha256": "31126d8756b3596cbb1b3ddca8768fd3aec4d5e7b176d23b01001ef2b6a85098",
       "bytes": 3524
     },
     {
@@ -618,7 +618,7 @@
       ],
       "kind": "guest",
       "engines": {
-        "cage": ">=0.3.2"
+        "cage": ">=0.2.1"
       },
       "contributes": {
         "desktopApps": [
@@ -651,8 +651,8 @@
       },
       "icon": "https://raw.githubusercontent.com/Lee-xeo/cage-plugins/main/plugins/codex-app/icon.svg",
       "archive": "https://raw.githubusercontent.com/Lee-xeo/cage-plugins/main/dist/codex-app-0.1.0.tar.gz",
-      "sha256": "88bc66c37bd9e36ed9aa6e0d53980503f204955c2b9602d9e953c17d9af27970",
-      "bytes": 2602
+      "sha256": "bfa4b1b3c0018855327ac1b8dd1698b9e9bd4c0a757ce9d8698cebac0309bb19",
+      "bytes": 2601
     },
     {
       "name": "codex-dispatch",

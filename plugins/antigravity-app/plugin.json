@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Runs Google's official Antigravity desktop app in the environment. Each update fetches Google's latest Linux release, because the app cannot update itself there.",
   "icon": "icon.svg",
-  "engines": { "cage": ">=0.3.2" },
+  "engines": { "cage": ">=0.2.1" },
   "kind": "guest",
   "permissions": [],
   "categories": ["developer"],

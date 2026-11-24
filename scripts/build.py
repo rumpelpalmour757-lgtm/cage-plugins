@@ -47,7 +47,7 @@ REQUIRED_LOCALES = (
     "be", "ps", "prs", "am", "so", "ti", "fr",
 )
 # Desktop applications: the vendor's own source, never a pinned version.
-DESKTOP_APPS_SINCE = (0, 3, 2)
+DESKTOP_APPS_SINCE = (0, 2, 1)
 DEB_PACKAGE = re.compile(r"^[a-z0-9][a-z0-9+.-]{1,62}$")
 APT_WORD = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._/-]{0,62}$")
 FINGERPRINT = re.compile(r"^[0-9A-F]{40}$")

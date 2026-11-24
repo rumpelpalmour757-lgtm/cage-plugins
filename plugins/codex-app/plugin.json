@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Runs OpenAI's official Codex desktop app (the ChatGPT app for Linux) in the environment, installed from OpenAI's signed repository at its latest release.",
   "icon": "icon.svg",
-  "engines": { "cage": ">=0.3.2" },
+  "engines": { "cage": ">=0.2.1" },
   "kind": "guest",
   "permissions": [],
   "categories": ["developer"],
